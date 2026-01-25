@@ -22,6 +22,7 @@ model User {
 
   accounts Account[]
   sessions Session[]
+  runs     Run[]
 
   @@map("users")
 }
@@ -67,4 +68,22 @@ model VerificationToken {
 
   @@id([identifier, token])
   @@map("verification_tokens")
+}
+
+// Running Records
+model Run {
+  id        String   @id @default(cuid())
+  userId    String
+  date      DateTime
+  distance  Float    // km
+  duration  Int?     // 秒 (オプショナル)
+  pace      Float?   // 分/km (計算フィールド)
+  memo      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, date])
+  @@map("runs")
 }
