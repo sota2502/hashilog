@@ -41,7 +41,7 @@ export async function GET(request: Request) {
     // ペースを計算
     const runsWithPace = runs.map((run) => ({
       ...run,
-      pace: run.duration > 0 ? run.duration / 60 / run.distance : null,
+      pace: run.duration && run.duration > 0 ? run.duration / 60 / run.distance : null,
     }));
 
     return NextResponse.json({

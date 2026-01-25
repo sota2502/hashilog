@@ -10,7 +10,7 @@ interface Run {
   id: string;
   date: string;
   distance: number;
-  duration: number;
+  duration: number | null;
   pace: number | null;
   memo: string | null;
 }

@@ -21,7 +21,7 @@ interface RunFormDialogProps {
     id: string;
     date: string;
     distance: number;
-    duration: number;
+    duration: number | null;
     memo?: string | null;
   };
 }
@@ -38,11 +38,11 @@ export default function RunFormDialog({
   const [formData, setFormData] = useState({
     date: editData?.date.split('T')[0] || new Date().toISOString().split('T')[0],
     distance: editData?.distance.toString() || '',
-    hours: editData ? Math.floor(editData.duration / 3600).toString() : '',
-    minutes: editData
+    hours: editData && editData.duration ? Math.floor(editData.duration / 3600).toString() : '',
+    minutes: editData && editData.duration
       ? Math.floor((editData.duration % 3600) / 60).toString()
       : '',
-    seconds: editData ? (editData.duration % 60).toString() : '',
+    seconds: editData && editData.duration ? (editData.duration % 60).toString() : '',
     memo: editData?.memo || '',
   });
 

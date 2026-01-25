@@ -23,7 +23,7 @@ interface Run {
   id: string;
   date: string;
   distance: number;
-  duration: number;
+  duration: number | null;
   pace: number | null;
   memo: string | null;
 }
@@ -37,7 +37,8 @@ export default function RunsList({ runs }: RunsListProps) {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [selectedRun, setSelectedRun] = useState<Run | null>(null);
 
-  const formatDuration = (seconds: number) => {
+  const formatDuration = (seconds: number | null) => {
+    if (!seconds) return '-';
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
