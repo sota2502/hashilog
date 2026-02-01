@@ -30,7 +30,7 @@ export default async function LoginPage() {
           }}
         >
           <Typography variant="h4" component="h1" gutterBottom>
-            RunNote
+            走ログ
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
             ランニング記録アプリにログイン

@@ -61,7 +61,7 @@ export default function Header({ user }: HeaderProps) {
               color: 'inherit',
             }}
           >
-            RunNote
+            走ログ
           </Typography>
 
           {user ? (

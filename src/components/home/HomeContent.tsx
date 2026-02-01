@@ -20,7 +20,7 @@ export default function HomeContent() {
         <Box sx={{ textAlign: 'center', py: 8 }}>
           <DirectionsRunIcon sx={{ fontSize: 80, mb: 2 }} />
           <Typography variant="h2" component="h1" gutterBottom>
-            RunNote
+            走ログ
           </Typography>
           <Typography variant="h5" sx={{ mb: 4, opacity: 0.9 }}>
             あなたのランニングを記録し、成長を可視化

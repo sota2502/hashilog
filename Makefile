@@ -40,7 +40,7 @@ restart:
 
 # PostgreSQL接続
 db-connect:
-	docker exec -it runnote-postgres psql -U postgres -d runnote
+	docker exec -it hashilog-postgres psql -U postgres -d hashilog
 
 db-shell: db-connect
 

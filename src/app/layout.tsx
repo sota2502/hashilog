@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SessionProvider } from "@/components/providers/SessionProvider";
 
 export const metadata: Metadata = {
-  title: "RunNote - ランニング記録アプリ",
+  title: "走ログ - ランニング記録アプリ",
   description: "毎日のランニングを記録して、統計を可視化しよう",
 };
 
